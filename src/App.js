@@ -2,46 +2,41 @@ import React from "react";
 import CSVReader from "react-csv-reader";
 import DashBoard from "./components/DashBoard";
 import Gragh from "./components/Gragh";
+import FileReader from "./components/FileReader";
+import {connect} from 'react-redux';
 
-const papaparseOptions = {
-  header: true,
-  dynamicTyping: true,
-  skipEmptyLines: true,
-  transformHeader: header => header.toLowerCase().replace(/\W/g, "_")
-};
+// const papaparseOptions = {
+//   header: true,
+//   dynamicTyping: true,
+//   skipEmptyLines: true,
+//   transformHeader: header => header.toLowerCase().replace(/\W/g, "_")
+// };
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      data: []
-    };
+  // constructor() {
+  //   super();
+  //   this.state = {
+  //     data: []
+  //   };
 
-    this.handleAddFile = this.handleAddFile.bind(this);
-  }
+  //   this.handleAddFile = this.handleAddFile.bind(this);
+  // }
 
-  handleAddFile = (data, fileName) => {
-    this.setState({
-      data
-    });
-  };
+  // handleAddFile = (data, fileName) => {
+  //   this.setState({
+  //     data
+  //   });
+  // };
 
   render() {
-    const data = this.state;
+    // const data = this.state;
     return (
       <div style={{ margin: 40 }}>
         <p style={{ color: "blue" }}>I choose antd-Desgin to do this code test instead of common React,
           but Stuck by the editItem in antd-table, need more time to think about that...</p>
-        <div>
-          <CSVReader
-            cssClass="react-csv-input"
-            label="Select Australian Postcodes.csv File in local"
-            onFileLoaded={this.handleAddFile}
-            parserOptions={papaparseOptions}
-          />
-        </div>
-        <DashBoard data={data}/>
-        <Gragh data={data}/>
+        <FileReader />
+        <DashBoard />
+        <Gragh />
       </div>
     );
   }

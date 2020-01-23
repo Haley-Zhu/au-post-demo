@@ -7,6 +7,7 @@ import "echarts/lib/component/tooltip";
 import "echarts/lib/component/title";
 import "echarts/lib/component/legend";
 import "echarts/lib/component/markPoint";
+import {connect} from 'react-redux';
 import ReactEcharts from "echarts-for-react";
 
 class Gragh extends React.Component {
@@ -53,10 +54,9 @@ class Gragh extends React.Component {
   };
 
   getNumberOfState = (stateName) => {
-    const { data } = this.props;
-    console.log(data, typeof data);
-    const dataArray = data.data;
-    const number = dataArray.reduce((total, item) => {
+    const data = this.props.data;
+    console.log("------52222222222222222----", data, typeof(data));
+    const number = data.reduce((total, item) => {
       return total + (item.state === stateName ? 1 : 0 )
     }, 0)
     return number;
@@ -71,4 +71,11 @@ class Gragh extends React.Component {
   }
 }
 
-export default Gragh;
+const mapStateToProps = state => ({
+	data: state.data,
+});
+
+
+export default connect(
+	mapStateToProps,
+)(Gragh);

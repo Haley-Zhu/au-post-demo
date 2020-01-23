@@ -1,4 +1,5 @@
 import React from "react";
+import {connect} from 'react-redux';
 import { Table, Input, Button, Icon } from "antd";
 
 class DashBoard extends React.Component {
@@ -87,8 +88,7 @@ class DashBoard extends React.Component {
   };
 
   render() {
-    const { data } = this.props;
-    const dataArray = data.data;
+    const dataArray = this.props.data;
 
     const columns = [
       {
@@ -157,4 +157,14 @@ class DashBoard extends React.Component {
   }
 }
 
-export default DashBoard;
+const mapStateToProps = state => ({
+	data: state.data,
+});
+
+const mapDispatchToProps = dispatch => ({
+});
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(DashBoard);
