@@ -31,11 +31,11 @@ class App extends React.Component {
     return (
       <div style={{ margin: 40 }}>
         <p style={{ color: "blue" }}>I choose antd-Desgin to do this code test instead of common React,
-          but Stuck by the editItem in antd-table, thinking now...</p>
+          but Stuck by the editItem in antd-table, need more time to think about that...</p>
         <div>
           <CSVReader
             cssClass="react-csv-input"
-            label="Select CSV File in public folder"
+            label="Select Australian Postcodes.csv File in local"
             onFileLoaded={this.handleAddFile}
             parserOptions={papaparseOptions}
           />
