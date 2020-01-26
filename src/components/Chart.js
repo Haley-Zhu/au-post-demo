@@ -51,8 +51,8 @@ const Chart = () => {
   };
 
   return (
-    <div className="pie_b">
-      <ReactEcharts option={option} />
+    <div className="chart">
+      {data.length !== 0 ? <ReactEcharts className="chart--pie" option={option} /> : null}
     </div>
   );
 }

@@ -17,12 +17,11 @@ const FileReader = () => {
   const dispatch = useDispatch();
 
   const handleAddFile = ( data ) => {
-    console.log("-----000000", data);
     dispatch(addDataAction(data));
   };
 
   return (
-    <div>
+    <div className="fileReader">
       <CSVReader
         cssClass="react-csv-input"
         label="Select Australian Postcodes.csv File in local"
