@@ -1,6 +1,6 @@
 const initialState = {
+  editItem: {},
   data: [],
-  test: 1,
 };
 
 const reducer = (state = initialState, action) => {
@@ -9,8 +9,24 @@ const reducer = (state = initialState, action) => {
     case "ADD_DATA":
       newState = {
         ...state,
-        data: action.data,
+        data: action.data
       };
+      break;
+    case "EDIT_DATA":
+      const { rowIndex, columnId, value } = action.editItem;
+      const editData = state.data.map((item, index) => {
+        if (index === rowIndex) {
+          return {
+            ...state.data[rowIndex],
+            [columnId]: value,
+          }
+        }
+        return item;
+      })
+      newState = {
+        ...state,
+        data: editData
+      }
       break;
     default:
       newState = state;

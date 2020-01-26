@@ -1,15 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'antd/dist/antd.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 import { createStore } from "redux";
-import { Provider } from 'react-redux';
-import reducer from './redux/reducer';
+import { StoreContext } from "redux-react-hook";
+import "bootstrap/dist/css/bootstrap.min.css";
+import reducer from "./redux/reducer";
 
 const store = createStore(reducer);
 
 ReactDOM.render(
-  <Provider store={store}>
-      <App />
-  </Provider>, 
-  document.getElementById('root'));
+  <StoreContext.Provider value={store}>
+    <App />
+  </StoreContext.Provider>,
+  document.getElementById("root")
+);
