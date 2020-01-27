@@ -5,7 +5,7 @@ import "echarts/lib/component/title";
 import "echarts/lib/component/legend";
 import "echarts/lib/component/markPoint";
 import { useMappedState } from "redux-react-hook";
-import { arrayDeleteRepeat } from '../../utils/modifyArray';
+import { arrayDeleteRepeat } from "../../utils/modifyArray";
 import ReactEcharts from "echarts-for-react";
 
 const Pie = () => {
@@ -52,9 +52,11 @@ const Pie = () => {
 
   return (
     <div className="chart">
-      {data.length !== 0 ? <ReactEcharts className="chart--pie" option={option} /> : null}
+      {data.length !== 0 ? (
+        <ReactEcharts className="chart--pie" option={option} notMerge={true} />
+      ) : null}
     </div>
   );
-}
+};
 
 export default Pie;
