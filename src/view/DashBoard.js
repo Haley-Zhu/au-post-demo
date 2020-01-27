@@ -1,12 +1,12 @@
 import React from "react";
-import PostCodeTable from "../components/PostCodeTable";
-import Chart from "../components/Chart";
+import Pie from "../components/Chart/Pie";
+import Bar from "../components/Chart/Bar";
 
 const DashBoard = () => {
   return (
     <div className="dashBoard">
-      <Chart />
-      <PostCodeTable />
+      <Pie />
+      <Bar />
     </div>
   );
 };

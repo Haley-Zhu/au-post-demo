@@ -3,6 +3,7 @@ import { useDispatch, useMappedState } from "redux-react-hook";
 
 import { editData as editDataAction } from "../redux/action";
 import TableTemple from "./TableTemple";
+import EditableCell from './EditableCell';
 import { SelectColumnFilter } from "./Filter";
 
 function PostCodeTable() {
@@ -33,11 +34,13 @@ function PostCodeTable() {
       },
       {
         Header: "Dc",
-        accessor: "dc"
+        accessor: "dc",
+        Cell: EditableCell, 
       },
       {
         Header: "Type",
         accessor: "type",
+        Cell: EditableCell, 
         Filter: SelectColumnFilter,
         filter: "includes"
       }

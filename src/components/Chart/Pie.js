@@ -5,10 +5,10 @@ import "echarts/lib/component/title";
 import "echarts/lib/component/legend";
 import "echarts/lib/component/markPoint";
 import { useMappedState } from "redux-react-hook";
-import { arrayDeleteRepeat } from '../utils/modifyArray';
+import { arrayDeleteRepeat } from '../../utils/modifyArray';
 import ReactEcharts from "echarts-for-react";
 
-const Chart = () => {
+const Pie = () => {
   const data = useMappedState(state => state.data);
 
   const getNumberOfState = stateName => {
@@ -57,4 +57,4 @@ const Chart = () => {
   );
 }
 
-export default Chart;
+export default Pie;

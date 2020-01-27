@@ -2,7 +2,6 @@ import React, { useMemo } from "react";
 
 import { useTable, useFilters, useGlobalFilter, usePagination } from 'react-table'
 import { GlobalFilter, DefaultColumnFilter } from './Filter';
-import EditableCell from './EditableCell';
 import { fuzzyTextFilterFn } from '../utils/fuzzyTextFilterFn';
 import { Table, Button } from 'react-bootstrap';
 
@@ -30,7 +29,6 @@ function TableTemple({ columns, data, updateMyData, skipPageReset }) {
   const defaultColumn = useMemo(
     () => ({
       Filter: DefaultColumnFilter,
-      Cell: EditableCell, 
     }),
     []
   )
